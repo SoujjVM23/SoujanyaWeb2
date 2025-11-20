@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Card</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #eef2f3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .card {
+        background: white;
+        width: 350px;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid #007bff;
+        display: block;
+        margin: 0 auto 20px;
+    }
+
+    .name {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .details {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .resume-btn {
+        margin-top: 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .resume-btn:hover {
+        background: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+    <img src="me.jpeg" class="profile-pic">
+
+    <div class="name">Soujanya V M</div>
+
+    <div class="details"><b>USN:</b> 2MM23CS077</div>
+    <div class="details"><b>Branch:</b> Computer Science and Engineering</div>
+    <div class="details"><b>Contact:</b> 9743808652</div>
+
+    <!-- Corrected button -->
+    <button class="resume-btn" onclick="window.location.href='resume.html'">
+        View Resume
+    </button>
+
+</div>
+
+</body>
+</html>

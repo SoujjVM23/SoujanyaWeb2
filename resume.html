@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Page</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #f2f2f2; /* Grey theme */
+    }
+
+    .container {
+        width: 85%;
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 8px;
+        border-left: 4px solid #777;  /* Grey highlight */
+        padding-left: 10px;
+    }
+
+    textarea {
+        width: 100%;
+        border: 1px solid #bbb;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 8px;
+        background: #fafafa;
+        resize: none;        /* removes corner scroll */
+        overflow: hidden;    /* hides scrollbar */
+        min-height: 50px;
+        box-sizing: border-box;
+    }
+
+    textarea:focus {
+        outline: none;
+        border-color: #666;
+        background: #f0f0f0;
+    }
+
+    .btn-box {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    button {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        background: #555;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    button:hover {
+        background: #333;
+    }
+</style>
+
+<script>
+    // Auto expand textarea height
+    function autoGrow(element) {
+        element.style.height = "5px";
+        element.style.height = (element.scrollHeight) + "px";
+    }
+</script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Profile Summary</h2>
+    <textarea oninput="autoGrow(this)">I am a Computer Science Engineering student with strong interest in programming, problem solving, and learning new technologies.</textarea>
+
+    <h2>Skills</h2>
+    <textarea oninput="autoGrow(this)">Basic programming skills, Typing skills, Basics of Excel, Computer knowledge</textarea>
+
+    <h2>Experience</h2>
+    <textarea oninput="autoGrow(this)">Fresher</textarea>
+
+    <h2>Education</h2>
+    <textarea oninput="autoGrow(this)">Bachelor of Computer Science and Engineering</textarea>
+
+    <h2>Languages</h2>
+    <textarea oninput="autoGrow(this)">English, Kannada, Hindi</textarea>
+
+    <div class="btn-box">
+        <button onclick="window.location.href='index.html'">Back to Profile</button>
+        <button onclick="window.print()">Download Resume</button>
+    </div>
+
+</div>
+
+</body>
+</html>
