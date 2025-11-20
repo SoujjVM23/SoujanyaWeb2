@@ -1,112 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resume Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Page</title>
 
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background: #f2f2f2; /* Grey theme */
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
 
-    .container {
-        width: 85%;
-        max-width: 900px;
-        margin: 40px auto;
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.15);
-    }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: #fff;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
 
-    h2 {
-        font-size: 22px;
-        color: #333;
-        margin-bottom: 8px;
-        border-left: 4px solid #777;  /* Grey highlight */
-        padding-left: 10px;
-    }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    textarea {
-        width: 100%;
-        border: 1px solid #bbb;
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 8px;
-        background: #fafafa;
-        resize: none;        /* removes corner scroll */
-        overflow: hidden;    /* hides scrollbar */
-        min-height: 90px;
-        box-sizing: border-box;
-    }
+        label {
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
 
-    textarea:focus {
-        outline: none;
-        border-color: #666;
-        background: #f0f0f0;
-    }
+        textarea, input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            font-size: 15px;
+            resize: none; /* No scroll */
+            overflow: hidden; /* No scrollbar */
+        }
 
-    .btn-box {
-        text-align: center;
-        margin-top: 30px;
-    }
+        textarea {
+            min-height: 10px;
+        }
 
-    button {
-        padding: 12px 25px;
-        border: none;
-        border-radius: 8px;
-        background: #555;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        margin: 10px;
-    }
+        .btn-box {
+            text-align: center;
+            margin-top: 25px;
+        }
 
-    button:hover {
-        background: #333;
-    }
-</style>
+        .btn {
+            padding: 12px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
 
-<script>
-    // Auto expand textarea height
-    function autoGrow(element) {
-        element.style.height = "5px";
-        element.style.height = (element.scrollHeight) + "px";
-    }
-</script>
+        .btn:hover {
+            background: #005fcc;
+        }
 
+        .back-btn {
+            background: #444;
+        }
+
+        .back-btn:hover {
+            background: #222;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
+    <div class="container">
+        <h2>Your Resume</h2>
 
-    <h2>Profile Summary</h2>
-    <textarea oninput="autoGrow(this)">I am a Computer Science Engineering student with strong interest in programming, problem solving, and learning new technologies.</textarea>
+        <!-- Summary -->
+        <label>Summary</label>
+        <textarea placeholder="I am a Computer science Engineering Student with knowledge of computer programming languages.I want to learn skills about new technologies."></textarea>
 
-    <h2>Skills</h2>
-    <textarea oninput="autoGrow(this)">Basic programming skills, Typing skills, Basics of Excel, Computer knowledge</textarea>
+        <!-- Skills -->
+        <label>Skills</label>
+        <textarea placeholder="Basics of programming languages,Typing skills,Basics of excel,Computer knowledge"></textarea>
 
-    <h2>Experience</h2>
-    <textarea oninput="autoGrow(this)">Fresher</textarea>
+        <!-- Experience -->
+        <label>Experience</label>
+        <textarea placeholder="Fresher"></textarea>
 
-    <h2>Education</h2>
-    <textarea oninput="autoGrow(this)">Bachelor of Computer Science and Engineering</textarea>
+        <!-- Education -->
+        <label>Education</label>
+        <textarea placeholder="Bachelor of computer science and engineering "></textarea>
 
-    <h2>Languages</h2>
-    <textarea oninput="autoGrow(this)">English, Kannada, Hindi</textarea>
+        <!-- Languages -->
+        <label>Languages</label>
+        <textarea placeholder="Kannada,English,Hindi"></textarea>
 
-    <div class="btn-box">
-        <button onclick="window.location.href='index.html'">Back to Profile</button>
-        <button onclick="window.print()">Download Resume</button>
+        <div class="btn-box">
+            <button class="btn" onclick="downloadResume()">Download Resume</button>
+			<div style="text-align:center; margin-top:20px;">
+    <a href="index.html">
+        <button style="
+            padding:10px 20px;
+            background-color:#4CAF50;
+            color:white;
+            border:none;
+            border-radius:6px;
+            font-size:16px;
+            cursor:pointer;">
+            Back to Profile
+        </button>
+    </a>
+</div>
+        </div>
     </div>
 
-</div>
+<script>
+function goBack() {
+    window.location.href = "profile.html"; 
+}
+
+function downloadResume() {
+    const text = "Resume Downloaded Successfully!";
+    const blob = new Blob([text], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "resume.txt";
+    link.click();
+}
+</script>
 
 </body>
-
 </html>
-
